@@ -12,10 +12,12 @@ namespace QuanLyKhachSan
 {
     public partial class GioiThieu : Form
     {
+        public GioiThieu()
         {
             InitializeComponent();
         }
 
+        private void GioiThieu_Load(object sender, EventArgs e)
         {
 
         }

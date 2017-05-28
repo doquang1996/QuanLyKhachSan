@@ -15,6 +15,7 @@ namespace QuanLyKhachSan
         public GioiThieu()
         {
             InitializeComponent();
+            webBrowser1.Navigate(@"C:\Users\Do Quang\documents\visual studio 2017\Projects\QuanLyKhachSan\QuanLyKhachSan\ht.html");
         }
 
         private void GioiThieu_Load(object sender, EventArgs e)

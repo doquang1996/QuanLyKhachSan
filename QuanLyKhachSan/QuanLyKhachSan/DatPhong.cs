@@ -1,4 +1,5 @@
-﻿using System;
+﻿using QuanLyKhachSan.Model;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -16,6 +17,8 @@ namespace QuanLyKhachSan
         Model.KhachHang khachhang = new Model.KhachHang();
         Model.MaPhieuDK phieudk = new Model.MaPhieuDK();
         Model.Phong phong = new Model.Phong();
+
+        IEnumerable<KhachHang> kh;
         List<Model.Phong> listphong = new List<Model.Phong>();
         List<Model.DichVu> dichvu = new List<Model.DichVu>();
         Model.DichVu dichvuchon = new Model.DichVu();
@@ -26,23 +29,64 @@ namespace QuanLyKhachSan
         {
             InitializeComponent();
         }
+        private void ktkhachhang()
+        {
+            kh = null;
+            string tenkh = textBox1.Text;
+            string cmnd = textBox2.Text;
+            string sdt = textBox7.Text;
+            string qt = textBox5.Text;
+            kh = from b in db.KhachHangs select b;
+
+            if (tenkh != "")
+            {
+                kh = from n in kh where n.TenKH == tenkh select n;
+            }
+            if (qt != "")
+            {
+                kh = from n in kh where n.QuocTich == qt select n;
+            }
+            if (cmnd != "")
+            {
+                kh = from m in kh where m.CMND == cmnd select m;
+            }
+            if (sdt != "")
+            {
+                kh = from k in kh where k.SDT == sdt select k;
+            }
+
+            foreach (var it in kh)
+            {
+
+                int n = dataGridView5.Rows.Add();
+                dataGridView5.Rows[n].Cells[0].Value = it.MaKH.ToString();
+                dataGridView5.Rows[n].Cells[1].Value = it.TenKH;
+                dataGridView5.Rows[n].Cells[2].Value = it.GioiTinh;
+                dataGridView5.Rows[n].Cells[3].Value = it.QuocTich;
+                dataGridView5.Rows[n].Cells[4].Value = it.SDT;
+                dataGridView5.Rows[n].Cells[5].Value = it.CMND;
+                dataGridView5.Rows[n].Cells[6].Value = it.Email;
+            }
+        }
         private void huydatphong()
         {
-            textBox1.Text=null;
-            textBox2.Text=null;
-            textBox7.Text=null;
-            comboBox1.Text = null ;
-            textBox5.Text=null;
-           textBox6.Text=null;
-            dateTimePicker1.Value=DateTime.Now;
-            textBox9.Text=null;
-            textBox10.Text=null;
-            textBox11.Text=null;
+            textBox1.Text = null;
+            textBox2.Text = null;
+            textBox7.Text = null;
+            comboBox1.Text = null;
+            textBox5.Text = null;
+            textBox6.Text = null;
+            dateTimePicker1.Value = DateTime.Now;
+            textBox9.Text = null;
+            textBox10.Text = null;
+            textBox11.Text = null;
+            
             foreach (DataGridViewRow i in dataGridView2.Rows)
                 dataGridView2.Rows.Remove(i);
-
             foreach (DataGridViewRow i in dataGridView4.Rows)
                 dataGridView4.Rows.Remove(i);
+            foreach (DataGridViewRow i in dataGridView5.Rows)
+                dataGridView5.Rows.Remove(i);
             tiendichvu = 0;
             tienphong = 0;
             txtTienDV.Text = tiendichvu.ToString();
@@ -52,20 +96,26 @@ namespace QuanLyKhachSan
             tabControl1.SelectedTab = tabControl1.TabPages[0];
             khachhang = null;
             phieudk = null;
-            
+
         }
         private void datphong()
         {
-            khachhang.TenKH = textBox1.Text;
-            khachhang.CMND = textBox2.Text;
-            khachhang.SDT = textBox7.Text;
-            if (comboBox1.SelectedIndex == 0) khachhang.GioiTinh = false; else khachhang.GioiTinh = true;
-            khachhang.QuocTich = textBox5.Text;
-            khachhang.Email = textBox6.Text;
+            if (khachhang == null)
+            {
+                khachhang.TenKH = textBox1.Text;
+                khachhang.CMND = textBox2.Text;
+                khachhang.SDT = textBox7.Text;
+                if (comboBox1.SelectedIndex == 0) khachhang.GioiTinh = false; else khachhang.GioiTinh = true;
+                khachhang.QuocTich = textBox5.Text;
+                khachhang.Email = textBox6.Text;
+                db.KhachHangs.Add(khachhang);
+
+                db.SaveChanges();
+            }
             phieudk.NgayDen = dateTimePicker1.Value;
             phieudk.NguoiLon = int.Parse(textBox9.Text);
             phieudk.TreEm = int.Parse(textBox10.Text);
-            phieudk.SoPhong = int.Parse(textBox11.Text);
+            phieudk.SoPhong = dataGridView2.Rows.Count;
             for (int i = 0; i < dataGridView4.Rows.Count; i++)
             {
                 string v = dataGridView4.Rows[i].Cells[0].Value.ToString().TrimEnd();
@@ -81,11 +131,14 @@ namespace QuanLyKhachSan
                 listphong.Add(phong);
             }
             phieudk.Phongs = listphong;
-            if (int.TryParse(txtDatTruoc.Text, out int a)) phieudk.TraTruoc = a;
-            else MessageBox.Show("Xin nhập số vào ô trả trước!");
+            if (txtDatTruoc.Text != "") {
+                if (int.TryParse(txtDatTruoc.Text, out int a)) phieudk.TraTruoc = a;
+                else MessageBox.Show("Xin nhập số vào ô trả trước!");
+                return;
+            }
+            else phieudk.TraTruoc = 0;
             phieudk.ChuThich = textBox12.Text;
-            db.KhachHangs.Add(khachhang);
-            db.SaveChanges();
+
             var makh = db.KhachHangs.SingleOrDefault(p => p.TenKH == textBox1.Text);
             phieudk.KhachHang = makh;
             db.MaPhieuDKs.Add(phieudk);
@@ -121,7 +174,7 @@ namespace QuanLyKhachSan
 
         private void textBox7_TextChanged(object sender, EventArgs e)
         {
-
+            ktkhachhang();
         }
 
         private void textBox6_TextChanged(object sender, EventArgs e)
@@ -131,7 +184,7 @@ namespace QuanLyKhachSan
 
         private void textBox5_TextChanged(object sender, EventArgs e)
         {
-
+            ktkhachhang();
         }
 
         private void textBox4_TextChanged(object sender, EventArgs e)
@@ -146,12 +199,12 @@ namespace QuanLyKhachSan
 
         private void textBox2_TextChanged(object sender, EventArgs e)
         {
-
+            ktkhachhang();
         }
 
         private void textBox1_TextChanged(object sender, EventArgs e)
         {
-
+            ktkhachhang();
         }
 
         private void txtSum_TextChanged(object sender, EventArgs e)
@@ -306,7 +359,7 @@ namespace QuanLyKhachSan
         {
             datphong();
         }
-       
+
         private void button9_Click(object sender, EventArgs e)
         {
             huydatphong();
@@ -325,6 +378,33 @@ namespace QuanLyKhachSan
         private void button8_Click(object sender, EventArgs e)
         {
             huydatphong();
+        }
+
+        private void dataGridView5_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
+        {
+            var kh = dataGridView5.CurrentRow;
+            int mkh = int.Parse(kh.Cells[0].Value.ToString());
+            khachhang = db.KhachHangs.SingleOrDefault(p => p.MaKH == mkh);
+            if (kh.Cells[1].Value != null)
+                textBox1.Text = kh.Cells[1].Value.ToString();
+            else textBox1.Text = "";
+            if (kh.Cells[5].Value != null)
+                textBox2.Text = kh.Cells[5].Value.ToString();
+            else textBox2.Text = "";
+            if (kh.Cells[4].Value != null)
+                textBox7.Text = kh.Cells[4].Value.ToString();
+            else textBox7.Text = "";
+            if (kh.Cells[2].Value != null)
+            {
+                if (kh.Cells[2].Value.ToString() == "false") comboBox1.SelectedIndex = 0; else comboBox1.SelectedIndex = 1;
+            }
+            else comboBox1.SelectedIndex = -1;
+            if (kh.Cells[3].Value != null)
+                textBox5.Text = kh.Cells[3].Value.ToString();
+            else textBox5.Text = "";
+            if (kh.Cells[6].Value != null)
+                textBox6.Text = kh.Cells[6].Value.ToString();
+            else textBox6.Text = "";
         }
     }
 }

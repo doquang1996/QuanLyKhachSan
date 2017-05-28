@@ -32,10 +32,17 @@ namespace QuanLyKhachSan
         {
             string tkSDT = txtTiemKiemSDT.Text;
             int tkMaPDK;
-            tk = from b in db.MaPhieuDKs
-                 where b.PhieuTTs == null
-                 select b;
-            
+          var  tk = from b in db.MaPhieuDKs
+                 from a in db.PhieuTTs.Where(p => p.MaPDK == b.MaPDK).DefaultIfEmpty()
+                 where b.MaPDK != a.MaPDK
+
+
+                 select 
+                 new {
+                     b.MaPDK,b.MaKH,b.ChuThich,b.KhachHang.TenKH,b.KhachHang.SDT,b.KhachHang.QuocTich,b.KhachHang.CMND,b.KhachHang.Email,b.NgayDen
+                 };
+
+
             string tkname = txtTiemKiemName.Text;
             string cmnd = txtTimKiemCMND.Text;
             DateTime ngayden = dateTimePicker1.Value;
@@ -55,11 +62,11 @@ namespace QuanLyKhachSan
             }
             if (tkname != "")
             {
-                tk = from p in tk where p.KhachHang.TenKH == tkname select p;
+                tk = from p in tk where p.TenKH == tkname select p;
             }
             if(tkSDT!="")
             {
-                tk= from p in tk where p.KhachHang.SDT == tkSDT select p;
+                tk= from p in tk where p.SDT == tkSDT select p;
             }
             if(dateTimePicker1.Checked)
             {
@@ -73,8 +80,9 @@ namespace QuanLyKhachSan
            int madk= int.Parse(dataGridView1.CurrentRow.Cells[0].Value.ToString().TrimEnd());
             var phieu = db.MaPhieuDKs.SingleOrDefault(p => p.MaPDK == madk);
             phieu.NgayDen = DateTime.Now;
+            phieu.ChuThich += "Đã nhận phòng";
             db.SaveChanges();
-            MessageBox.Show("Nhan phong thanh cong");
+            MessageBox.Show("Nhậ phòng thành công");
         }
 
         private void dateTimePicker1_ValueChanged(object sender, EventArgs e)

@@ -85,7 +85,7 @@ namespace QuanLyKhachSan
 
         private void btnThoat_Click(object sender, EventArgs e)
         {
-            kh = null;
+            kh = from b in db.KhachHangs where b.MaKH==0 select b;
             dataGridView1.DataSource = kh.ToList();
             textBox1.Clear();
             textBox2.Clear();
@@ -131,17 +131,17 @@ namespace QuanLyKhachSan
         private void button1_Click(object sender, EventArgs e)
         {
 
-            
-            
-           
-            phong = from a in db.Phongs select a;
+
+
+
+            var phong = from a in db.Phongs select new { a.MaPhong,a.TenPhong,a.GiaPhong.Gia,a.MotaPhong};
             if (textBox7.Text!="")
             {
                 phong = from a in phong where a.TenPhong == textBox7.Text select a;
             }
             if(int.TryParse(textBox10.Text, out int v))
             {
-                phong = from m in phong where m.GiaPhong.Gia == v select m;
+                phong = from m in phong where m.Gia == v select m;
             }
             if(comboBox1.Text!="")
             {
@@ -168,12 +168,29 @@ namespace QuanLyKhachSan
 
         private void button5_Click(object sender, EventArgs e)
         {
-            phong = null;
+            phong = from a in db.Phongs where a.MaPhong == "" select a;
             comboBox1.Refresh();
             comboBox2.Refresh();
             textBox7.Clear();
             textBox10.Clear();
-            dataGridView3.ClearSelection();
+            dataGridView3.DataSource=phong.ToList();
+        }
+
+        private void dataGridView1_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
+        {
+            using (Thongtinkhachhang u = new Thongtinkhachhang(int.Parse(dataGridView1.CurrentRow.Cells[0].Value.ToString())))
+            {
+                u.ShowDialog();
+            };
+            TimKiem_Load(sender,e);
+        }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+            textBox5.Clear();
+            textBox6.Clear();
+            dv = from b in db.DichVus where b.MaDV == 0 select b;
+            dataGridView2.DataSource = dv.ToList();
         }
     }
     

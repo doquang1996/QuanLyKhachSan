@@ -61,12 +61,13 @@ namespace QuanLyKhachSan
 
         private void btnXoaPhong_Click(object sender, EventArgs e)
         {
-            string maphong = dataGridView1.CurrentRow.Cells[0].Value.ToString();
+            string maphong = dataGridView1.CurrentRow.Cells[5].Value.ToString().TrimEnd();
             var xoaphong = db.GiaPhongs.SingleOrDefault(p => p.MaPhong == maphong);
             var xoa = db.Phongs.SingleOrDefault(p => p.MaPhong == maphong);
             db.GiaPhongs.Remove(xoaphong);
             db.Phongs.Remove(xoa);
             db.SaveChanges();
+            Phong_Load(sender, e);
         }
 
         private void btnSuaPhong_Click(object sender, EventArgs e)

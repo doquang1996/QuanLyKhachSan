@@ -34,8 +34,8 @@ namespace QuanLyKhachSan
             string tkSDT = txtTiemKiemSDT.Text;
             int tkMaPDK;
             tk = from b in db.MaPhieuDKs
-                  from a in db.PhieuTTs.Where(a=>a.MaPDK==b.MaPDK).DefaultIfEmpty()
-                   where a.MaPDK==null
+                  from a in db.PhieuTTs.Where(p=>p.MaPDK==b.MaPDK ).DefaultIfEmpty()
+                   where b.MaPDK != a.MaPDK
 
                  
                  select b;

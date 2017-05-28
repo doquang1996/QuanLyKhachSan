@@ -9,7 +9,7 @@
         <EntityTypeShape EntityType="QuanLyKhachSanModel.GiaPhong" Width="1.5" PointX="7.5" PointY="5.25" IsExpanded="true" />
         <EntityTypeShape EntityType="QuanLyKhachSanModel.KhachHang" Width="1.5" PointX="0.75" PointY="0.75" IsExpanded="true" />
         <EntityTypeShape EntityType="QuanLyKhachSanModel.KieuPhong" Width="1.5" PointX="3.875" PointY="7.875" IsExpanded="true" />
-        <EntityTypeShape EntityType="QuanLyKhachSanModel.LoaiPhong" Width="1.5" PointX="9.875" PointY="7.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="QuanLyKhachSanModel.LoaiPhong" Width="1.5" PointX="10" PointY="6.875" IsExpanded="true" />
         <EntityTypeShape EntityType="QuanLyKhachSanModel.MaPhieuDK" Width="1.5" PointX="3" PointY="3.25" IsExpanded="true" />
         <EntityTypeShape EntityType="QuanLyKhachSanModel.PhieuTT" Width="1.5" PointX="5.25" PointY="2.5" IsExpanded="true" />
         <EntityTypeShape EntityType="QuanLyKhachSanModel.Phong" Width="1.5" PointX="5.25" PointY="5.375" IsExpanded="true" />

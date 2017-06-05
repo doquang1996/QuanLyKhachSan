@@ -81,12 +81,13 @@ namespace QuanLyKhachSan
             textBox10.Text = null;
             textBox11.Text = null;
             
+           IEnumerable<Model.KhachHang> tk = from b in db.KhachHangs where b.MaKH == 0 select b;
+            
             foreach (DataGridViewRow i in dataGridView2.Rows)
                 dataGridView2.Rows.Remove(i);
             foreach (DataGridViewRow i in dataGridView4.Rows)
                 dataGridView4.Rows.Remove(i);
-            foreach (DataGridViewRow i in dataGridView5.Rows)
-                dataGridView5.Rows.Remove(i);
+            dataGridView5.DataSource = tk.ToList();
             tiendichvu = 0;
             tienphong = 0;
             txtTienDV.Text = tiendichvu.ToString();
@@ -143,7 +144,7 @@ namespace QuanLyKhachSan
             phieudk.KhachHang = makh;
             db.MaPhieuDKs.Add(phieudk);
             db.SaveChanges();
-            MessageBox.Show("Luu thanh cong!");
+            MessageBox.Show("Đặt phòng thành công!");
             huydatphong();
         }
 

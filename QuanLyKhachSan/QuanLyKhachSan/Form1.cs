@@ -57,7 +57,7 @@ namespace QuanLyKhachSan
                         this.Hide();
                         label3.Text = null;
                         using
-                                (MainForm suadv = new MainForm())
+                                (MainForm suadv = new MainForm(user))
                         {
                             suadv.ShowDialog();
 

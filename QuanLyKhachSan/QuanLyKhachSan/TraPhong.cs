@@ -69,6 +69,10 @@ namespace QuanLyKhachSan
             {
                 tk = from p in tk where p.NgayDen.Value.Date == ngayden.Date select p;
             }
+            if (txtTimKiemMaPDK.Text == "" && tkname == "" && tkSDT == "" && !dateTimePicker1.Checked)
+            {
+                tk = from b in db.MaPhieuDKs where b.MaPDK == 0 select b;
+            }
             dataGridView1.DataSource = tk.ToList();
         }
 
@@ -209,6 +213,11 @@ namespace QuanLyKhachSan
             txtTimKiemCMND.Clear();
             txtTimKiemMaPDK.Clear();
             textBox1.Clear();
+        }
+
+        private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
         }
     }
 }

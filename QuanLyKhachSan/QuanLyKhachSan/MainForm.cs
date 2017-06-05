@@ -16,9 +16,10 @@ namespace QuanLyKhachSan
     public partial class MainForm : Form
     {
         Image closeImg, closeImgAct;
-
-        public MainForm()
+        Model.user user = new Model.user();
+        public MainForm(Model.user us)
         {
+            user = us;
             InitializeComponent();
         }
 
@@ -123,6 +124,24 @@ namespace QuanLyKhachSan
         private void button1_Click(object sender, EventArgs e)
         {
             addTabPage(new GioiThieu());
+        }
+
+        private void tabControl1_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            
+        }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+            if (user.role.TrimEnd() != "admin")
+            {
+                MessageBox.Show("Chỉ có admin mới có thể mở chức năng này");
+                return;
+            }
+            else
+            {
+                addTabPage(new user(user));
+            }
         }
 
         private void MainForm_Load(object sender, EventArgs e)

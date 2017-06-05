@@ -14,7 +14,7 @@ namespace QuanLyKhachSan
     public partial class TimKiem : Form
     {
         QuanLyKhachSanEntities3 db = new QuanLyKhachSanEntities3();
-        
+
         IEnumerable<KhachHang> kh;
         IEnumerable<Model.DichVu> dv;
         IEnumerable<Model.Phong> phong;
@@ -32,8 +32,8 @@ namespace QuanLyKhachSan
             DateTime ngayden = dateTimePicker1.Value;
             DateTime ngaydi = dateTimePicker2.Value;
             kh = from b in db.KhachHangs select b;
-            
-            if(tenkh!="")
+
+            if (tenkh != "")
             {
                 kh = from n in kh where n.TenKH == tenkh select n;
             }
@@ -41,11 +41,11 @@ namespace QuanLyKhachSan
             {
                 kh = from n in kh where n.QuocTich == qt select n;
             }
-            if (cmnd!="")
+            if (cmnd != "")
             {
                 kh = from m in kh where m.CMND == cmnd select m;
             }
-            if(sdt!="")
+            if (sdt != "")
             {
                 kh = from k in kh where k.SDT == sdt select k;
             }
@@ -80,12 +80,14 @@ namespace QuanLyKhachSan
                 dataGridView1.DataSource = kha.ToList();
                 return;
             }
+            if (tenkh == "" && qt == "" && sdt == "" && cmnd == "" && !dateTimePicker1.Checked && !dateTimePicker2.Checked) kh = from b in db.KhachHangs where b.MaKH == 0 select b;
+
             dataGridView1.DataSource = kh.ToList();
         }
 
         private void btnThoat_Click(object sender, EventArgs e)
         {
-            kh = from b in db.KhachHangs where b.MaKH==0 select b;
+            kh = from b in db.KhachHangs where b.MaKH == 0 select b;
             dataGridView1.DataSource = kh.ToList();
             textBox1.Clear();
             textBox2.Clear();
@@ -99,11 +101,11 @@ namespace QuanLyKhachSan
 
         private void btnTimKiemDV_Click(object sender, EventArgs e)
         {
-            if(textBox5.Text!="")
+            if (textBox5.Text != "")
             {
                 dv = from d in db.DichVus where d.TenDV == textBox5.Text select d;
             }
-            if(textBox6.Text!="")
+            if (textBox6.Text != "")
             {
                 int.TryParse(textBox6.Text, out int a);
                 dv = from d in db.DichVus where d.GiaDV == a select d;
@@ -134,16 +136,16 @@ namespace QuanLyKhachSan
 
 
 
-            var phong = from a in db.Phongs select new { a.MaPhong,a.TenPhong,a.GiaPhong.Gia,a.MotaPhong};
-            if (textBox7.Text!="")
+            var phong = from a in db.Phongs select new { a.MaPhong, a.TenPhong, a.GiaPhong.Gia, a.MotaPhong };
+            if (textBox7.Text != "")
             {
                 phong = from a in phong where a.TenPhong == textBox7.Text select a;
             }
-            if(int.TryParse(textBox10.Text, out int v))
+            if (int.TryParse(textBox10.Text, out int v))
             {
                 phong = from m in phong where m.Gia == v select m;
             }
-            if(comboBox1.Text!="")
+            if (comboBox1.Text != "")
             {
                 string malp = comboBox1.Text.TrimEnd();
                 phong = from m in phong
@@ -173,7 +175,7 @@ namespace QuanLyKhachSan
             comboBox2.Refresh();
             textBox7.Clear();
             textBox10.Clear();
-            dataGridView3.DataSource=phong.ToList();
+            dataGridView3.DataSource = phong.ToList();
         }
 
         private void dataGridView1_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
@@ -182,7 +184,7 @@ namespace QuanLyKhachSan
             {
                 u.ShowDialog();
             };
-            TimKiem_Load(sender,e);
+            TimKiem_Load(sender, e);
         }
 
         private void button3_Click(object sender, EventArgs e)
@@ -193,5 +195,5 @@ namespace QuanLyKhachSan
             dataGridView2.DataSource = dv.ToList();
         }
     }
-    
+
 }

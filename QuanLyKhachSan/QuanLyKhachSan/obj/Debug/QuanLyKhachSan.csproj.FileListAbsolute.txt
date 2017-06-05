@@ -20,7 +20,9 @@ C:\Users\Do Quang\documents\visual studio 2017\Projects\QuanLyKhachSan\QuanLyKha
 C:\Users\Do Quang\documents\visual studio 2017\Projects\QuanLyKhachSan\QuanLyKhachSan\obj\Debug\QuanLyKhachSan.TraPhong.resources
 C:\Users\Do Quang\documents\visual studio 2017\Projects\QuanLyKhachSan\QuanLyKhachSan\obj\Debug\QuanLyKhachSan.SuaDV.resources
 C:\Users\Do Quang\documents\visual studio 2017\Projects\QuanLyKhachSan\QuanLyKhachSan\obj\Debug\QuanLyKhachSan.SuaPhong.resources
-C:\Users\Do Quang\documents\visual studio 2017\Projects\QuanLyKhachSan\QuanLyKhachSan\obj\Debug\QuanLyKhachSan.csprojResolveAssemblyReference.cache
 C:\Users\Do Quang\documents\visual studio 2017\Projects\QuanLyKhachSan\QuanLyKhachSan\bin\Debug\itextsharp.dll
 C:\Users\Do Quang\documents\visual studio 2017\Projects\QuanLyKhachSan\QuanLyKhachSan\bin\Debug\itextsharp.xml
 C:\Users\Do Quang\documents\visual studio 2017\Projects\QuanLyKhachSan\QuanLyKhachSan\obj\Debug\QuanLyKhachSan.Thongtinkhachhang.resources
+C:\Users\Do Quang\documents\visual studio 2017\Projects\QuanLyKhachSan\QuanLyKhachSan\obj\Debug\QuanLyKhachSan.user.resources
+C:\Users\Do Quang\documents\visual studio 2017\Projects\QuanLyKhachSan\QuanLyKhachSan\obj\Debug\QuanLyKhachSan.csprojResolveAssemblyReference.cache
+C:\Users\Do Quang\documents\visual studio 2017\Projects\QuanLyKhachSan\QuanLyKhachSan\obj\Debug\QuanLyKhachSan.SuaUser.resources

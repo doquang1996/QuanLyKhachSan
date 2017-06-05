@@ -63,14 +63,14 @@
             this.groupBox1.Controls.Add(this.label1);
             this.groupBox1.Location = new System.Drawing.Point(12, 12);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(740, 103);
+            this.groupBox1.Size = new System.Drawing.Size(1035, 103);
             this.groupBox1.TabIndex = 0;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Tìm phiếu đặt";
             // 
             // dateTimePicker1
             // 
-            this.dateTimePicker1.Location = new System.Drawing.Point(588, 25);
+            this.dateTimePicker1.Location = new System.Drawing.Point(819, 23);
             this.dateTimePicker1.Name = "dateTimePicker1";
             this.dateTimePicker1.ShowCheckBox = true;
             this.dateTimePicker1.Size = new System.Drawing.Size(133, 20);
@@ -81,7 +81,7 @@
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(490, 29);
+            this.label5.Location = new System.Drawing.Point(721, 29);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(92, 13);
             this.label5.TabIndex = 9;
@@ -89,7 +89,7 @@
             // 
             // btnTimKiem
             // 
-            this.btnTimKiem.Location = new System.Drawing.Point(606, 61);
+            this.btnTimKiem.Location = new System.Drawing.Point(819, 61);
             this.btnTimKiem.Name = "btnTimKiem";
             this.btnTimKiem.Size = new System.Drawing.Size(82, 29);
             this.btnTimKiem.TabIndex = 8;
@@ -99,15 +99,15 @@
             // 
             // txtTimKiemCMND
             // 
-            this.txtTimKiemCMND.Location = new System.Drawing.Point(356, 66);
+            this.txtTimKiemCMND.Location = new System.Drawing.Point(459, 66);
             this.txtTimKiemCMND.Name = "txtTimKiemCMND";
-            this.txtTimKiemCMND.Size = new System.Drawing.Size(100, 20);
+            this.txtTimKiemCMND.Size = new System.Drawing.Size(189, 20);
             this.txtTimKiemCMND.TabIndex = 7;
             // 
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(295, 69);
+            this.label4.Location = new System.Drawing.Point(398, 69);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(55, 13);
             this.label4.TabIndex = 6;
@@ -115,15 +115,15 @@
             // 
             // txtTiemKiemName
             // 
-            this.txtTiemKiemName.Location = new System.Drawing.Point(356, 26);
+            this.txtTiemKiemName.Location = new System.Drawing.Point(459, 26);
             this.txtTiemKiemName.Name = "txtTiemKiemName";
-            this.txtTiemKiemName.Size = new System.Drawing.Size(100, 20);
+            this.txtTiemKiemName.Size = new System.Drawing.Size(189, 20);
             this.txtTiemKiemName.TabIndex = 5;
             // 
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(264, 29);
+            this.label3.Location = new System.Drawing.Point(367, 29);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(86, 13);
             this.label3.TabIndex = 4;
@@ -134,7 +134,7 @@
             // 
             this.txtTiemKiemSDT.Location = new System.Drawing.Point(121, 66);
             this.txtTiemKiemSDT.Name = "txtTiemKiemSDT";
-            this.txtTiemKiemSDT.Size = new System.Drawing.Size(100, 20);
+            this.txtTiemKiemSDT.Size = new System.Drawing.Size(189, 20);
             this.txtTiemKiemSDT.TabIndex = 3;
             // 
             // label2
@@ -150,7 +150,7 @@
             // 
             this.txtTimKiemMaPDK.Location = new System.Drawing.Point(121, 26);
             this.txtTimKiemMaPDK.Name = "txtTimKiemMaPDK";
-            this.txtTimKiemMaPDK.Size = new System.Drawing.Size(100, 20);
+            this.txtTimKiemMaPDK.Size = new System.Drawing.Size(189, 20);
             this.txtTimKiemMaPDK.TabIndex = 1;
             // 
             // label1
@@ -167,7 +167,7 @@
             this.groupBox2.Controls.Add(this.dataGridView1);
             this.groupBox2.Location = new System.Drawing.Point(12, 121);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(740, 184);
+            this.groupBox2.Size = new System.Drawing.Size(1035, 378);
             this.groupBox2.TabIndex = 1;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Thông tin phiếu đặt";
@@ -177,12 +177,12 @@
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView1.Location = new System.Drawing.Point(6, 34);
             this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.Size = new System.Drawing.Size(728, 144);
+            this.dataGridView1.Size = new System.Drawing.Size(1023, 332);
             this.dataGridView1.TabIndex = 0;
             // 
             // btnNhanPhong
             // 
-            this.btnNhanPhong.Location = new System.Drawing.Point(618, 320);
+            this.btnNhanPhong.Location = new System.Drawing.Point(882, 505);
             this.btnNhanPhong.Name = "btnNhanPhong";
             this.btnNhanPhong.Size = new System.Drawing.Size(82, 29);
             this.btnNhanPhong.TabIndex = 9;
@@ -194,7 +194,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(764, 361);
+            this.ClientSize = new System.Drawing.Size(1059, 594);
             this.Controls.Add(this.btnNhanPhong);
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.groupBox1);

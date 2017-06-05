@@ -20,6 +20,7 @@ namespace QuanLyKhachSan
 
         private void Phong_Load(object sender, EventArgs e)
         {
+            QuanLyKhachSanEntities3 db = new QuanLyKhachSanEntities3();
             textBox1.Text = textBox2.Text = txtMota.Text = null;
             var loaiphong = db.LoaiPhongs.Select(p => p.TenLP).ToList();
             for(int i=0; i<loaiphong.Count(); i++)
@@ -64,10 +65,15 @@ namespace QuanLyKhachSan
             string maphong = dataGridView1.CurrentRow.Cells[5].Value.ToString().TrimEnd();
             var xoaphong = db.GiaPhongs.SingleOrDefault(p => p.MaPhong == maphong);
             var xoa = db.Phongs.SingleOrDefault(p => p.MaPhong == maphong);
-            db.GiaPhongs.Remove(xoaphong);
-            db.Phongs.Remove(xoa);
-            db.SaveChanges();
-            Phong_Load(sender, e);
+            if (MessageBox.Show("Xác nhận xóa phòng " + maphong, "", MessageBoxButtons.YesNo) == DialogResult.Yes)
+            {
+                db.GiaPhongs.Remove(xoaphong);
+                db.Phongs.Remove(xoa);
+                db.SaveChanges();
+                Phong_Load(sender, e);
+            }
+            else
+            return;
         }
 
         private void btnSuaPhong_Click(object sender, EventArgs e)

@@ -23,7 +23,8 @@ namespace QuanLyKhachSan
 
         private void Thongtinkhachhang_Load(object sender, EventArgs e)
         {
-            var khachhang = db.KhachHangs.Find(id1);
+            QuanLyKhachSanEntities3 db = new QuanLyKhachSanEntities3();
+            var khachhang = db.KhachHangs.FirstOrDefault(p => p.MaKH == id1);
             if (khachhang != null)
             {
                 textBox1.Text = khachhang.TenKH;
@@ -45,26 +46,27 @@ namespace QuanLyKhachSan
                              k.NgayDen,
                              k.NgayDi,
                              k.SoPhong,
-                             
+
                          };
             dataGridView1.DataSource = sudung.ToList();
         }
 
         private void button1_Click(object sender, EventArgs e)
         {
-            var khachhang = db.KhachHangs.Find(id1);
+            var khachhang = db.KhachHangs.FirstOrDefault(p => p.MaKH == id1);
             if (khachhang != null)
             {
-                khachhang.TenKH = textBox1.Text.TrimEnd();
-                khachhang.CMND= textBox2.Text.TrimEnd();
-                khachhang.SDT = textBox3.Text.TrimEnd();
-                khachhang.QuocTich = textBox4.Text.TrimEnd() ;
+                if (textBox1.Text != "") khachhang.TenKH = textBox1.Text.TrimEnd();
+                if (textBox2.Text != "") khachhang.CMND = textBox2.Text.TrimEnd();
+                if (textBox3.Text != "") khachhang.SDT = textBox3.Text.TrimEnd();
+                if (textBox4.Text != "") khachhang.QuocTich = textBox4.Text.TrimEnd();
                 if (comboBox1.SelectedIndex == 1) khachhang.GioiTinh = true;
                 if (comboBox1.SelectedIndex == 0) khachhang.GioiTinh = false;
                 if (comboBox1.SelectedValue == null) khachhang.GioiTinh = null;
-                khachhang.Email =  textBox6.Text;
+                if (textBox6.Text != "") khachhang.Email = textBox6.Text.TrimEnd();
                 db.SaveChanges();
                 MessageBox.Show("Sua thong tin thanh cong");
+                Thongtinkhachhang_Load(sender, e);
             }
         }
     }

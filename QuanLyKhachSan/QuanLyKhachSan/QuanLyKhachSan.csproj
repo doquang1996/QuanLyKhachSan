@@ -161,6 +161,12 @@
     <Compile Include="SuaPhong.Designer.cs">
       <DependentUpon>SuaPhong.cs</DependentUpon>
     </Compile>
+    <Compile Include="SuaUser.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="SuaUser.Designer.cs">
+      <DependentUpon>SuaUser.cs</DependentUpon>
+    </Compile>
     <Compile Include="Thongtinkhachhang.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -178,6 +184,12 @@
     </Compile>
     <Compile Include="TraPhong.Designer.cs">
       <DependentUpon>TraPhong.cs</DependentUpon>
+    </Compile>
+    <Compile Include="user.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="user.Designer.cs">
+      <DependentUpon>user.cs</DependentUpon>
     </Compile>
     <EmbeddedResource Include="DatPhong.resx">
       <DependentUpon>DatPhong.cs</DependentUpon>
@@ -216,6 +228,9 @@
     <EmbeddedResource Include="SuaPhong.resx">
       <DependentUpon>SuaPhong.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="SuaUser.resx">
+      <DependentUpon>SuaUser.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Thongtinkhachhang.resx">
       <DependentUpon>Thongtinkhachhang.cs</DependentUpon>
     </EmbeddedResource>
@@ -224,6 +239,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="TraPhong.resx">
       <DependentUpon>TraPhong.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="user.resx">
+      <DependentUpon>user.cs</DependentUpon>
     </EmbeddedResource>
     <EntityDeploy Include="Model\Model1.edmx">
       <Generator>EntityModelCodeGenerator</Generator>

@@ -94,7 +94,7 @@
             this.tabControl1.Location = new System.Drawing.Point(12, 12);
             this.tabControl1.Name = "tabControl1";
             this.tabControl1.SelectedIndex = 0;
-            this.tabControl1.Size = new System.Drawing.Size(740, 337);
+            this.tabControl1.Size = new System.Drawing.Size(1035, 570);
             this.tabControl1.TabIndex = 0;
             // 
             // tabPage1
@@ -104,7 +104,7 @@
             this.tabPage1.Location = new System.Drawing.Point(4, 22);
             this.tabPage1.Name = "tabPage1";
             this.tabPage1.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage1.Size = new System.Drawing.Size(732, 311);
+            this.tabPage1.Size = new System.Drawing.Size(1027, 544);
             this.tabPage1.TabIndex = 0;
             this.tabPage1.Text = "Tra cứu thông tin khách hàng";
             this.tabPage1.UseVisualStyleBackColor = true;
@@ -113,16 +113,16 @@
             // 
             this.groupBox2.Controls.Add(this.btnThoat);
             this.groupBox2.Controls.Add(this.dataGridView1);
-            this.groupBox2.Location = new System.Drawing.Point(315, 6);
+            this.groupBox2.Location = new System.Drawing.Point(400, 6);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(411, 288);
+            this.groupBox2.Size = new System.Drawing.Size(621, 532);
             this.groupBox2.TabIndex = 3;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Danh sách khách hàng";
             // 
             // btnThoat
             // 
-            this.btnThoat.Location = new System.Drawing.Point(327, 257);
+            this.btnThoat.Location = new System.Drawing.Point(537, 501);
             this.btnThoat.Name = "btnThoat";
             this.btnThoat.Size = new System.Drawing.Size(78, 25);
             this.btnThoat.TabIndex = 9;
@@ -135,7 +135,7 @@
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView1.Location = new System.Drawing.Point(6, 19);
             this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.Size = new System.Drawing.Size(399, 232);
+            this.dataGridView1.Size = new System.Drawing.Size(609, 464);
             this.dataGridView1.TabIndex = 0;
             this.dataGridView1.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellDoubleClick);
             // 
@@ -156,7 +156,7 @@
             this.groupBox1.Controls.Add(this.label1);
             this.groupBox1.Location = new System.Drawing.Point(6, 6);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(303, 288);
+            this.groupBox1.Size = new System.Drawing.Size(388, 532);
             this.groupBox1.TabIndex = 2;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Điều kiện tìm";
@@ -164,25 +164,25 @@
             // dateTimePicker2
             // 
             this.dateTimePicker2.Checked = false;
-            this.dateTimePicker2.Location = new System.Drawing.Point(110, 188);
+            this.dateTimePicker2.Location = new System.Drawing.Point(110, 228);
             this.dateTimePicker2.Name = "dateTimePicker2";
             this.dateTimePicker2.ShowCheckBox = true;
-            this.dateTimePicker2.Size = new System.Drawing.Size(170, 20);
+            this.dateTimePicker2.Size = new System.Drawing.Size(255, 20);
             this.dateTimePicker2.TabIndex = 12;
             // 
             // dateTimePicker1
             // 
             this.dateTimePicker1.Checked = false;
-            this.dateTimePicker1.Location = new System.Drawing.Point(110, 155);
+            this.dateTimePicker1.Location = new System.Drawing.Point(110, 187);
             this.dateTimePicker1.Name = "dateTimePicker1";
             this.dateTimePicker1.ShowCheckBox = true;
-            this.dateTimePicker1.Size = new System.Drawing.Size(170, 20);
+            this.dateTimePicker1.Size = new System.Drawing.Size(255, 20);
             this.dateTimePicker1.TabIndex = 11;
             // 
             // label6
             // 
             this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(5, 194);
+            this.label6.Location = new System.Drawing.Point(5, 234);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(44, 13);
             this.label6.TabIndex = 10;
@@ -191,7 +191,7 @@
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(5, 161);
+            this.label5.Location = new System.Drawing.Point(5, 193);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(54, 13);
             this.label5.TabIndex = 9;
@@ -199,7 +199,7 @@
             // 
             // btnTimKiemKH
             // 
-            this.btnTimKiemKH.Location = new System.Drawing.Point(202, 257);
+            this.btnTimKiemKH.Location = new System.Drawing.Point(287, 340);
             this.btnTimKiemKH.Name = "btnTimKiemKH";
             this.btnTimKiemKH.Size = new System.Drawing.Size(78, 25);
             this.btnTimKiemKH.TabIndex = 8;
@@ -209,15 +209,15 @@
             // 
             // textBox4
             // 
-            this.textBox4.Location = new System.Drawing.Point(110, 125);
+            this.textBox4.Location = new System.Drawing.Point(110, 149);
             this.textBox4.Name = "textBox4";
-            this.textBox4.Size = new System.Drawing.Size(170, 20);
+            this.textBox4.Size = new System.Drawing.Size(255, 20);
             this.textBox4.TabIndex = 7;
             // 
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(5, 128);
+            this.label4.Location = new System.Drawing.Point(5, 152);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(53, 13);
             this.label4.TabIndex = 6;
@@ -225,15 +225,15 @@
             // 
             // textBox3
             // 
-            this.textBox3.Location = new System.Drawing.Point(110, 92);
+            this.textBox3.Location = new System.Drawing.Point(110, 108);
             this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(170, 20);
+            this.textBox3.Size = new System.Drawing.Size(255, 20);
             this.textBox3.TabIndex = 5;
             // 
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(5, 95);
+            this.label3.Location = new System.Drawing.Point(5, 111);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(70, 13);
             this.label3.TabIndex = 4;
@@ -241,15 +241,15 @@
             // 
             // textBox2
             // 
-            this.textBox2.Location = new System.Drawing.Point(110, 59);
+            this.textBox2.Location = new System.Drawing.Point(110, 67);
             this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(170, 20);
+            this.textBox2.Size = new System.Drawing.Size(255, 20);
             this.textBox2.TabIndex = 3;
             // 
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(5, 62);
+            this.label2.Location = new System.Drawing.Point(5, 70);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(55, 13);
             this.label2.TabIndex = 2;
@@ -259,7 +259,7 @@
             // 
             this.textBox1.Location = new System.Drawing.Point(110, 26);
             this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(170, 20);
+            this.textBox1.Size = new System.Drawing.Size(255, 20);
             this.textBox1.TabIndex = 1;
             // 
             // label1
@@ -278,7 +278,7 @@
             this.tabPage2.Location = new System.Drawing.Point(4, 22);
             this.tabPage2.Name = "tabPage2";
             this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage2.Size = new System.Drawing.Size(732, 311);
+            this.tabPage2.Size = new System.Drawing.Size(1027, 544);
             this.tabPage2.TabIndex = 1;
             this.tabPage2.Text = "Tra cứu dịch vụ";
             this.tabPage2.UseVisualStyleBackColor = true;
@@ -289,16 +289,16 @@
             this.groupBox3.Controls.Add(this.dataGridView2);
             this.groupBox3.Location = new System.Drawing.Point(315, 6);
             this.groupBox3.Name = "groupBox3";
-            this.groupBox3.Size = new System.Drawing.Size(411, 299);
+            this.groupBox3.Size = new System.Drawing.Size(706, 532);
             this.groupBox3.TabIndex = 5;
             this.groupBox3.TabStop = false;
             this.groupBox3.Text = "Danh sách dịch vụ";
             // 
             // button3
             // 
-            this.button3.Location = new System.Drawing.Point(327, 268);
+            this.button3.Location = new System.Drawing.Point(421, 19);
             this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(78, 25);
+            this.button3.Size = new System.Drawing.Size(78, 53);
             this.button3.TabIndex = 11;
             this.button3.Text = "Hủy tra cứu";
             this.button3.UseVisualStyleBackColor = true;
@@ -309,7 +309,7 @@
             this.dataGridView2.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView2.Location = new System.Drawing.Point(6, 19);
             this.dataGridView2.Name = "dataGridView2";
-            this.dataGridView2.Size = new System.Drawing.Size(399, 231);
+            this.dataGridView2.Size = new System.Drawing.Size(398, 415);
             this.dataGridView2.TabIndex = 0;
             // 
             // groupBox4
@@ -321,14 +321,14 @@
             this.groupBox4.Controls.Add(this.label7);
             this.groupBox4.Location = new System.Drawing.Point(6, 6);
             this.groupBox4.Name = "groupBox4";
-            this.groupBox4.Size = new System.Drawing.Size(302, 299);
+            this.groupBox4.Size = new System.Drawing.Size(302, 532);
             this.groupBox4.TabIndex = 4;
             this.groupBox4.TabStop = false;
             this.groupBox4.Text = "Điều kiện tìm";
             // 
             // btnTimKiemDV
             // 
-            this.btnTimKiemDV.Location = new System.Drawing.Point(221, 270);
+            this.btnTimKiemDV.Location = new System.Drawing.Point(221, 130);
             this.btnTimKiemDV.Name = "btnTimKiemDV";
             this.btnTimKiemDV.Size = new System.Drawing.Size(75, 23);
             this.btnTimKiemDV.TabIndex = 4;
@@ -375,7 +375,7 @@
             this.tabPage3.Location = new System.Drawing.Point(4, 22);
             this.tabPage3.Name = "tabPage3";
             this.tabPage3.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage3.Size = new System.Drawing.Size(732, 311);
+            this.tabPage3.Size = new System.Drawing.Size(1027, 544);
             this.tabPage3.TabIndex = 2;
             this.tabPage3.Text = "Tra cứu phòng";
             this.tabPage3.UseVisualStyleBackColor = true;
@@ -386,16 +386,16 @@
             this.groupBox5.Controls.Add(this.dataGridView3);
             this.groupBox5.Location = new System.Drawing.Point(315, 6);
             this.groupBox5.Name = "groupBox5";
-            this.groupBox5.Size = new System.Drawing.Size(411, 299);
+            this.groupBox5.Size = new System.Drawing.Size(706, 532);
             this.groupBox5.TabIndex = 5;
             this.groupBox5.TabStop = false;
             this.groupBox5.Text = "Danh sách phòng";
             // 
             // button5
             // 
-            this.button5.Location = new System.Drawing.Point(327, 268);
+            this.button5.Location = new System.Drawing.Point(509, 36);
             this.button5.Name = "button5";
-            this.button5.Size = new System.Drawing.Size(78, 25);
+            this.button5.Size = new System.Drawing.Size(78, 57);
             this.button5.TabIndex = 14;
             this.button5.Text = "Hủy tra cứu";
             this.button5.UseVisualStyleBackColor = true;
@@ -406,7 +406,7 @@
             this.dataGridView3.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView3.Location = new System.Drawing.Point(6, 19);
             this.dataGridView3.Name = "dataGridView3";
-            this.dataGridView3.Size = new System.Drawing.Size(399, 231);
+            this.dataGridView3.Size = new System.Drawing.Size(481, 402);
             this.dataGridView3.TabIndex = 12;
             // 
             // groupBox6
@@ -422,7 +422,7 @@
             this.groupBox6.Controls.Add(this.label9);
             this.groupBox6.Location = new System.Drawing.Point(6, 6);
             this.groupBox6.Name = "groupBox6";
-            this.groupBox6.Size = new System.Drawing.Size(303, 299);
+            this.groupBox6.Size = new System.Drawing.Size(303, 532);
             this.groupBox6.TabIndex = 4;
             this.groupBox6.TabStop = false;
             this.groupBox6.Text = "Điều kiện tìm";
@@ -507,7 +507,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(764, 361);
+            this.ClientSize = new System.Drawing.Size(1059, 594);
             this.Controls.Add(this.tabControl1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "TimKiem";

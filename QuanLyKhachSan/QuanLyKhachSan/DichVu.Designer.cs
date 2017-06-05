@@ -50,14 +50,14 @@
             this.groupBox2.Controls.Add(this.dataGridView1);
             this.groupBox2.Location = new System.Drawing.Point(229, 12);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(516, 378);
+            this.groupBox2.Size = new System.Drawing.Size(818, 570);
             this.groupBox2.TabIndex = 3;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Danh sách dịch vụ";
             // 
             // btnXoaDV
             // 
-            this.btnXoaDV.Location = new System.Drawing.Point(435, 344);
+            this.btnXoaDV.Location = new System.Drawing.Point(545, 525);
             this.btnXoaDV.Name = "btnXoaDV";
             this.btnXoaDV.Size = new System.Drawing.Size(75, 23);
             this.btnXoaDV.TabIndex = 2;
@@ -67,7 +67,7 @@
             // 
             // btnSuaDV
             // 
-            this.btnSuaDV.Location = new System.Drawing.Point(338, 344);
+            this.btnSuaDV.Location = new System.Drawing.Point(435, 525);
             this.btnSuaDV.Name = "btnSuaDV";
             this.btnSuaDV.Size = new System.Drawing.Size(91, 23);
             this.btnSuaDV.TabIndex = 1;
@@ -80,7 +80,7 @@
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView1.Location = new System.Drawing.Point(6, 41);
             this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.Size = new System.Drawing.Size(504, 297);
+            this.dataGridView1.Size = new System.Drawing.Size(806, 478);
             this.dataGridView1.TabIndex = 0;
             this.dataGridView1.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellClick);
             // 
@@ -93,7 +93,7 @@
             this.groupBox1.Controls.Add(this.textBox1);
             this.groupBox1.Location = new System.Drawing.Point(12, 12);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(211, 378);
+            this.groupBox1.Size = new System.Drawing.Size(211, 570);
             this.groupBox1.TabIndex = 2;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Thêm mới";
@@ -144,7 +144,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(780, 400);
+            this.ClientSize = new System.Drawing.Size(1059, 594);
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.groupBox1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;

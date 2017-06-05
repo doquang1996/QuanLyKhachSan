@@ -38,6 +38,9 @@
     <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
       <HintPath>..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.SqlServer.dll</HintPath>
     </Reference>
+    <Reference Include="itextsharp, Version=5.5.11.0, Culture=neutral, PublicKeyToken=8354ae6d2174ddca, processorArchitecture=MSIL">
+      <HintPath>..\packages\iTextSharp.5.5.11\lib\itextsharp.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.ComponentModel.DataAnnotations" />
     <Reference Include="System.Core" />
@@ -158,6 +161,18 @@
     <Compile Include="SuaPhong.Designer.cs">
       <DependentUpon>SuaPhong.cs</DependentUpon>
     </Compile>
+    <Compile Include="SuaUser.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="SuaUser.Designer.cs">
+      <DependentUpon>SuaUser.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Thongtinkhachhang.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Thongtinkhachhang.Designer.cs">
+      <DependentUpon>Thongtinkhachhang.cs</DependentUpon>
+    </Compile>
     <Compile Include="TimKiem.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -169,6 +184,12 @@
     </Compile>
     <Compile Include="TraPhong.Designer.cs">
       <DependentUpon>TraPhong.cs</DependentUpon>
+    </Compile>
+    <Compile Include="user.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="user.Designer.cs">
+      <DependentUpon>user.cs</DependentUpon>
     </Compile>
     <EmbeddedResource Include="DatPhong.resx">
       <DependentUpon>DatPhong.cs</DependentUpon>
@@ -207,11 +228,20 @@
     <EmbeddedResource Include="SuaPhong.resx">
       <DependentUpon>SuaPhong.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="SuaUser.resx">
+      <DependentUpon>SuaUser.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Thongtinkhachhang.resx">
+      <DependentUpon>Thongtinkhachhang.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="TimKiem.resx">
       <DependentUpon>TimKiem.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="TraPhong.resx">
       <DependentUpon>TraPhong.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="user.resx">
+      <DependentUpon>user.cs</DependentUpon>
     </EmbeddedResource>
     <EntityDeploy Include="Model\Model1.edmx">
       <Generator>EntityModelCodeGenerator</Generator>
@@ -238,6 +268,7 @@
     <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="ht.html" />
     <Content Include="Model\Model1.Context.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
       <DependentUpon>Model1.edmx</DependentUpon>
@@ -248,6 +279,26 @@
       <DependentUpon>Model1.edmx</DependentUpon>
       <LastGenOutput>Model1.cs</LastGenOutput>
     </Content>
+    <Content Include="Resources\8875211-Illuminated-Hotel-Sign-against-Black-Background-Stock-Photo.jpg" />
+    <Content Include="Resources\bootstrap.css" />
+    <Content Include="Resources\bootstrap.min.css" />
+    <Content Include="Resources\dangnhap.png" />
+    <Content Include="Resources\dat.png" />
+    <Content Include="Resources\dat1.png" />
+    <Content Include="Resources\dat2.png" />
+    <Content Include="Resources\dat3.png" />
+    <Content Include="Resources\dat4.png" />
+    <Content Include="Resources\dichvu.png" />
+    <Content Include="Resources\dichvu1.png" />
+    <Content Include="Resources\mainform.png" />
+    <Content Include="Resources\nhan.png" />
+    <Content Include="Resources\Phong.png" />
+    <Content Include="Resources\Phong1.png" />
+    <Content Include="Resources\suadv.png" />
+    <Content Include="Resources\Suaphong.png" />
+    <Content Include="Resources\Xoadv.png" />
+    <Content Include="Resources\xoaphong.png" />
+    <Content Include="xoaphong.png" />
     <None Include="Resources\1490869161_arrow-return-180-left.png" />
   </ItemGroup>
   <ItemGroup>

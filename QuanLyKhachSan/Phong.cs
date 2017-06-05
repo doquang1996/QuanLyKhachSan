@@ -20,6 +20,7 @@ namespace QuanLyKhachSan
 
         private void Phong_Load(object sender, EventArgs e)
         {
+            QuanLyKhachSanEntities3 db = new QuanLyKhachSanEntities3();
             textBox1.Text = textBox2.Text = txtMota.Text = null;
             var loaiphong = db.LoaiPhongs.Select(p => p.TenLP).ToList();
             for(int i=0; i<loaiphong.Count(); i++)
@@ -61,16 +62,23 @@ namespace QuanLyKhachSan
 
         private void btnXoaPhong_Click(object sender, EventArgs e)
         {
-            string maphong = dataGridView1.CurrentRow.Cells[0].Value.ToString();
+            string maphong = dataGridView1.CurrentRow.Cells[5].Value.ToString().TrimEnd();
             var xoaphong = db.GiaPhongs.SingleOrDefault(p => p.MaPhong == maphong);
             var xoa = db.Phongs.SingleOrDefault(p => p.MaPhong == maphong);
-            db.GiaPhongs.Remove(xoaphong);
-            db.Phongs.Remove(xoa);
-            db.SaveChanges();
+            if (MessageBox.Show("Xác nhận xóa phòng " + maphong, "", MessageBoxButtons.YesNo) == DialogResult.Yes)
+            {
+                db.GiaPhongs.Remove(xoaphong);
+                db.Phongs.Remove(xoa);
+                db.SaveChanges();
+                Phong_Load(sender, e);
+            }
+            else
+            return;
         }
-
+        //sửa phòng
         private void btnSuaPhong_Click(object sender, EventArgs e)
         {
+            //lấy mã phòng truyền đến form sửa
             string ma = dataGridView1.CurrentRow.Cells[5].Value.ToString();
             using(QuanLyKhachSan.SuaPhong suaphong = new SuaPhong(ma))
                 {
@@ -78,7 +86,7 @@ namespace QuanLyKhachSan
             }
             Phong_Load(sender,e);
         }
-
+        //thêm phòng
         private void btnThemPhong_Click(object sender, EventArgs e)
         {
             var suaGia = new QuanLyKhachSan.Model.GiaPhong();
@@ -96,6 +104,10 @@ namespace QuanLyKhachSan
             
             MessageBox.Show("Đã Them thành công phòng!");
             Phong_Load(sender, e);
+        }
+
+        private void textBox2_TextChanged(object sender, EventArgs e)
+        {
         }
     }
 }

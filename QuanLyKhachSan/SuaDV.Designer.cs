@@ -45,7 +45,7 @@
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(299, 321);
+            this.button1.Location = new System.Drawing.Point(276, 433);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(126, 23);
             this.button1.TabIndex = 6;
@@ -59,9 +59,9 @@
             this.groupBox1.Controls.Add(this.label2);
             this.groupBox1.Controls.Add(this.textBox1);
             this.groupBox1.Controls.Add(this.label1);
-            this.groupBox1.Location = new System.Drawing.Point(264, 12);
+            this.groupBox1.Location = new System.Drawing.Point(359, 12);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(245, 267);
+            this.groupBox1.Size = new System.Drawing.Size(341, 403);
             this.groupBox1.TabIndex = 7;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Dịch vụ mới";
@@ -70,7 +70,7 @@
             // 
             this.textBox2.Location = new System.Drawing.Point(95, 75);
             this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(144, 20);
+            this.textBox2.Size = new System.Drawing.Size(240, 20);
             this.textBox2.TabIndex = 9;
             // 
             // label2
@@ -86,7 +86,7 @@
             // 
             this.textBox1.Location = new System.Drawing.Point(95, 39);
             this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(144, 20);
+            this.textBox1.Size = new System.Drawing.Size(240, 20);
             this.textBox1.TabIndex = 7;
             // 
             // label1
@@ -106,7 +106,7 @@
             this.groupBox2.Controls.Add(this.label6);
             this.groupBox2.Location = new System.Drawing.Point(12, 12);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(245, 267);
+            this.groupBox2.Size = new System.Drawing.Size(341, 403);
             this.groupBox2.TabIndex = 8;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Dịch vụ ban đầu";
@@ -116,7 +116,7 @@
             this.textBox5.Location = new System.Drawing.Point(95, 78);
             this.textBox5.Name = "textBox5";
             this.textBox5.ReadOnly = true;
-            this.textBox5.Size = new System.Drawing.Size(144, 20);
+            this.textBox5.Size = new System.Drawing.Size(240, 20);
             this.textBox5.TabIndex = 9;
             // 
             // label5
@@ -133,7 +133,7 @@
             this.textBox6.Location = new System.Drawing.Point(95, 39);
             this.textBox6.Name = "textBox6";
             this.textBox6.ReadOnly = true;
-            this.textBox6.Size = new System.Drawing.Size(144, 20);
+            this.textBox6.Size = new System.Drawing.Size(240, 20);
             this.textBox6.TabIndex = 7;
             // 
             // label6
@@ -149,7 +149,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(521, 356);
+            this.ClientSize = new System.Drawing.Size(712, 468);
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.button1);

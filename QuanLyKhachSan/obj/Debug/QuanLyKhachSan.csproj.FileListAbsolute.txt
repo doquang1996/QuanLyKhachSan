@@ -20,4 +20,37 @@ C:\Users\Do Quang\documents\visual studio 2017\Projects\QuanLyKhachSan\QuanLyKha
 C:\Users\Do Quang\documents\visual studio 2017\Projects\QuanLyKhachSan\QuanLyKhachSan\obj\Debug\QuanLyKhachSan.TraPhong.resources
 C:\Users\Do Quang\documents\visual studio 2017\Projects\QuanLyKhachSan\QuanLyKhachSan\obj\Debug\QuanLyKhachSan.SuaDV.resources
 C:\Users\Do Quang\documents\visual studio 2017\Projects\QuanLyKhachSan\QuanLyKhachSan\obj\Debug\QuanLyKhachSan.SuaPhong.resources
+C:\Users\Do Quang\documents\visual studio 2017\Projects\QuanLyKhachSan\QuanLyKhachSan\bin\Debug\itextsharp.dll
+C:\Users\Do Quang\documents\visual studio 2017\Projects\QuanLyKhachSan\QuanLyKhachSan\bin\Debug\itextsharp.xml
+C:\Users\Do Quang\documents\visual studio 2017\Projects\QuanLyKhachSan\QuanLyKhachSan\obj\Debug\QuanLyKhachSan.Thongtinkhachhang.resources
+C:\Users\Do Quang\documents\visual studio 2017\Projects\QuanLyKhachSan\QuanLyKhachSan\obj\Debug\QuanLyKhachSan.user.resources
 C:\Users\Do Quang\documents\visual studio 2017\Projects\QuanLyKhachSan\QuanLyKhachSan\obj\Debug\QuanLyKhachSan.csprojResolveAssemblyReference.cache
+C:\Users\Do Quang\documents\visual studio 2017\Projects\QuanLyKhachSan\QuanLyKhachSan\obj\Debug\QuanLyKhachSan.SuaUser.resources
+C:\Users\namtv1996\Desktop\GITHUB-PROJECT\Quan Ly Khach San - Đỗ Quảng\QuanLyKhachSan\QuanLyKhachSan\bin\Debug\QuanLyKhachSan.exe.config
+C:\Users\namtv1996\Desktop\GITHUB-PROJECT\Quan Ly Khach San - Đỗ Quảng\QuanLyKhachSan\QuanLyKhachSan\obj\Debug\QuanLyKhachSan.exe
+C:\Users\namtv1996\Desktop\GITHUB-PROJECT\Quan Ly Khach San - Đỗ Quảng\QuanLyKhachSan\QuanLyKhachSan\obj\Debug\QuanLyKhachSan.pdb
+C:\Users\namtv1996\Desktop\GITHUB-PROJECT\Quan Ly Khach San - Đỗ Quảng\QuanLyKhachSan\QuanLyKhachSan\obj\Debug\QuanLyKhachSan.csprojResolveAssemblyReference.cache
+C:\Users\namtv1996\Desktop\GITHUB-PROJECT\Quan Ly Khach San - Đỗ Quảng\QuanLyKhachSan\QuanLyKhachSan\obj\Debug\QuanLyKhachSan.DatPhong.resources
+C:\Users\namtv1996\Desktop\GITHUB-PROJECT\Quan Ly Khach San - Đỗ Quảng\QuanLyKhachSan\QuanLyKhachSan\obj\Debug\QuanLyKhachSan.DichVu.resources
+C:\Users\namtv1996\Desktop\GITHUB-PROJECT\Quan Ly Khach San - Đỗ Quảng\QuanLyKhachSan\QuanLyKhachSan\obj\Debug\QuanLyKhachSan.FormLogin.resources
+C:\Users\namtv1996\Desktop\GITHUB-PROJECT\Quan Ly Khach San - Đỗ Quảng\QuanLyKhachSan\QuanLyKhachSan\obj\Debug\QuanLyKhachSan.GioiThieu.resources
+C:\Users\namtv1996\Desktop\GITHUB-PROJECT\Quan Ly Khach San - Đỗ Quảng\QuanLyKhachSan\QuanLyKhachSan\obj\Debug\QuanLyKhachSan.MainForm.resources
+C:\Users\namtv1996\Desktop\GITHUB-PROJECT\Quan Ly Khach San - Đỗ Quảng\QuanLyKhachSan\QuanLyKhachSan\obj\Debug\QuanLyKhachSan.NhanPhong.resources
+C:\Users\namtv1996\Desktop\GITHUB-PROJECT\Quan Ly Khach San - Đỗ Quảng\QuanLyKhachSan\QuanLyKhachSan\obj\Debug\QuanLyKhachSan.Phong.resources
+C:\Users\namtv1996\Desktop\GITHUB-PROJECT\Quan Ly Khach San - Đỗ Quảng\QuanLyKhachSan\QuanLyKhachSan\obj\Debug\QuanLyKhachSan.Properties.Resources.resources
+C:\Users\namtv1996\Desktop\GITHUB-PROJECT\Quan Ly Khach San - Đỗ Quảng\QuanLyKhachSan\QuanLyKhachSan\obj\Debug\QuanLyKhachSan.SuaDV.resources
+C:\Users\namtv1996\Desktop\GITHUB-PROJECT\Quan Ly Khach San - Đỗ Quảng\QuanLyKhachSan\QuanLyKhachSan\obj\Debug\QuanLyKhachSan.SuaPhong.resources
+C:\Users\namtv1996\Desktop\GITHUB-PROJECT\Quan Ly Khach San - Đỗ Quảng\QuanLyKhachSan\QuanLyKhachSan\obj\Debug\QuanLyKhachSan.SuaUser.resources
+C:\Users\namtv1996\Desktop\GITHUB-PROJECT\Quan Ly Khach San - Đỗ Quảng\QuanLyKhachSan\QuanLyKhachSan\obj\Debug\QuanLyKhachSan.Thongtinkhachhang.resources
+C:\Users\namtv1996\Desktop\GITHUB-PROJECT\Quan Ly Khach San - Đỗ Quảng\QuanLyKhachSan\QuanLyKhachSan\obj\Debug\QuanLyKhachSan.TimKiem.resources
+C:\Users\namtv1996\Desktop\GITHUB-PROJECT\Quan Ly Khach San - Đỗ Quảng\QuanLyKhachSan\QuanLyKhachSan\obj\Debug\QuanLyKhachSan.TraPhong.resources
+C:\Users\namtv1996\Desktop\GITHUB-PROJECT\Quan Ly Khach San - Đỗ Quảng\QuanLyKhachSan\QuanLyKhachSan\obj\Debug\QuanLyKhachSan.user.resources
+C:\Users\namtv1996\Desktop\GITHUB-PROJECT\Quan Ly Khach San - Đỗ Quảng\QuanLyKhachSan\QuanLyKhachSan\obj\Debug\QuanLyKhachSan.csproj.GenerateResource.Cache
+C:\Users\namtv1996\Desktop\GITHUB-PROJECT\Quan Ly Khach San - Đỗ Quảng\QuanLyKhachSan\QuanLyKhachSan\bin\Debug\QuanLyKhachSan.exe
+C:\Users\namtv1996\Desktop\GITHUB-PROJECT\Quan Ly Khach San - Đỗ Quảng\QuanLyKhachSan\QuanLyKhachSan\bin\Debug\QuanLyKhachSan.pdb
+C:\Users\namtv1996\Desktop\GITHUB-PROJECT\Quan Ly Khach San - Đỗ Quảng\QuanLyKhachSan\QuanLyKhachSan\bin\Debug\EntityFramework.dll
+C:\Users\namtv1996\Desktop\GITHUB-PROJECT\Quan Ly Khach San - Đỗ Quảng\QuanLyKhachSan\QuanLyKhachSan\bin\Debug\EntityFramework.SqlServer.dll
+C:\Users\namtv1996\Desktop\GITHUB-PROJECT\Quan Ly Khach San - Đỗ Quảng\QuanLyKhachSan\QuanLyKhachSan\bin\Debug\itextsharp.dll
+C:\Users\namtv1996\Desktop\GITHUB-PROJECT\Quan Ly Khach San - Đỗ Quảng\QuanLyKhachSan\QuanLyKhachSan\bin\Debug\EntityFramework.xml
+C:\Users\namtv1996\Desktop\GITHUB-PROJECT\Quan Ly Khach San - Đỗ Quảng\QuanLyKhachSan\QuanLyKhachSan\bin\Debug\EntityFramework.SqlServer.xml
+C:\Users\namtv1996\Desktop\GITHUB-PROJECT\Quan Ly Khach San - Đỗ Quảng\QuanLyKhachSan\QuanLyKhachSan\bin\Debug\itextsharp.xml

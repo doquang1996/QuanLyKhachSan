@@ -62,7 +62,8 @@ namespace QuanLyKhachSan
         private void btnXoaDV_Click(object sender, EventArgs e)
         {
             int id = Convert.ToInt32(dataGridView1.CurrentRow.Cells[0].Value.ToString());
-            Model.DichVu dv = db.DichVus.Single(p => p.MaDV == id);
+            Model.DichVu dv = db.DichVus.SingleOrDefault(p => p.MaDV == id);
+            
             db.DichVus.Remove(dv);
             db.SaveChanges();
             DichVu_Load(sender,e);

@@ -15,11 +15,11 @@ namespace QuanLyKhachSan
     {
 
         QuanLyKhachSanEntities3 db = new QuanLyKhachSanEntities3();
-        IEnumerable< MaPhieuDK> tk ;
+        IEnumerable<MaPhieuDK> tk;
         public NhanPhong()
         {
             InitializeComponent();
-            
+
         }
 
 
@@ -29,55 +29,66 @@ namespace QuanLyKhachSan
         }
 
         private void btnTimKiem_Click(object sender, EventArgs e)
+
         {
             string tkSDT = txtTiemKiemSDT.Text;
             int tkMaPDK;
-            tk = from b in db.MaPhieuDKs select b;
+            tk = from b in db.MaPhieuDKs
+                 from a in db.PhieuTTs.Where(p => p.MaPDK == b.MaPDK).DefaultIfEmpty()
+                 where b.MaPDK != a.MaPDK
+
+
+                 select b;
 
             string tkname = txtTiemKiemName.Text;
             string cmnd = txtTimKiemCMND.Text;
             DateTime ngayden = dateTimePicker1.Value;
-            
+
             if (txtTimKiemMaPDK.Text != "")
             {
-                if (!int.TryParse(txtTimKiemMaPDK.Text, out int so))
-                {
-                    MessageBox.Show("Nhap dung ma phieu dang ki !");
-                    return;
-                }
-                else
-                {
-                    tkMaPDK = so;
-                    tk = from p in tk where p.MaPDK == tkMaPDK select p;
-                }
+                int so = int.Parse(txtTimKiemMaPDK.Text);
+                tkMaPDK = so;
+                tk = from p in tk where p.MaPDK == tkMaPDK select p;
+
             }
             if (tkname != "")
             {
                 tk = from p in tk where p.KhachHang.TenKH == tkname select p;
             }
-            if(tkSDT!="")
+            if (tkSDT != "")
             {
-                tk= from p in tk where p.KhachHang.SDT == tkSDT select p;
+                tk = from p in tk where p.KhachHang.SDT == tkSDT select p;
             }
-            if(dateTimePicker1.Checked)
+            if (dateTimePicker1.Checked)
             {
                 tk = from p in tk where p.NgayDen.Value.Date == ngayden.Date select p;
+            }
+            if (txtTimKiemMaPDK.Text == "" && tkname == "" && tkSDT == "" && !dateTimePicker1.Checked)
+            {
+                tk = from b in db.MaPhieuDKs where b.MaPDK == 0 select b;
             }
             dataGridView1.DataSource = tk.ToList();
         }
 
         private void btnNhanPhong_Click(object sender, EventArgs e)
         {
-           int madk= int.Parse(dataGridView1.CurrentRow.Cells[0].Value.ToString().TrimEnd());
+            int madk = int.Parse(dataGridView1.CurrentRow.Cells[0].Value.ToString().TrimEnd());
             var phieu = db.MaPhieuDKs.SingleOrDefault(p => p.MaPDK == madk);
-            phieu.NgayDen = DateTime.Now;
-            db.SaveChanges();
-            MessageBox.Show("Nhan phong thanh cong");
+            if (MessageBox.Show("Xác nhận khách nhận phòng, Mã phiếu: " + madk + "", "", MessageBoxButtons.YesNo) == DialogResult.Yes)
+            {
+                phieu.NgayDen = DateTime.Now;
+                phieu.ChuThich += "Đã nhận phòng";
+                db.SaveChanges();
+                MessageBox.Show("Nhận phòng thành công");
+                tk = from b in db.MaPhieuDKs where b.MaPDK == 0 select b;
+                dataGridView1.DataSource = tk.ToList();
+            }
+            else return;
         }
 
         private void dateTimePicker1_ValueChanged(object sender, EventArgs e)
         {
-            
+
         }
     }
 }

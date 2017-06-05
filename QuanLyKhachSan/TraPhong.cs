@@ -8,7 +8,8 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using QuanLyKhachSan.Model;
-
+using iTextSharp.text.pdf;
+using iTextSharp.text;
 namespace QuanLyKhachSan
 {
     public partial class TraPhong : Form
@@ -26,14 +27,18 @@ namespace QuanLyKhachSan
         private void TraPhong_Load(object sender, EventArgs e)
         {
             button1.Enabled = false;
-            button3.Enabled = false;
         }
 
         private void btnTimKiem_Click(object sender, EventArgs e)
         {
             string tkSDT = txtTiemKiemSDT.Text;
             int tkMaPDK;
-            tk = from b in db.MaPhieuDKs select b;
+            tk = from b in db.MaPhieuDKs
+                  from a in db.PhieuTTs.Where(p=>p.MaPDK==b.MaPDK ).DefaultIfEmpty()
+                   where b.MaPDK != a.MaPDK
+
+                 
+                 select b;
 
             string tkname = txtTiemKiemName.Text;
             string cmnd = txtTimKiemCMND.Text;
@@ -41,16 +46,10 @@ namespace QuanLyKhachSan
 
             if (txtTimKiemMaPDK.Text != "")
             {
-                if (!int.TryParse(txtTimKiemMaPDK.Text, out int so))
-                {
-                    MessageBox.Show("Nhap dung ma phieu dang ki !");
-                    return;
-                }
-                else
-                {
+                int so = int.Parse(txtTimKiemMaPDK.Text);
                     tkMaPDK = so;
                     tk = from p in tk where p.MaPDK == tkMaPDK select p;
-                }
+                
             }
             if (tkname != "")
             {
@@ -64,13 +63,16 @@ namespace QuanLyKhachSan
             {
                 tk = from p in tk where p.NgayDen.Value.Date == ngayden.Date select p;
             }
+            if (txtTimKiemMaPDK.Text == "" && tkname == "" && tkSDT == "" && !dateTimePicker1.Checked)
+            {
+                tk = from b in db.MaPhieuDKs where b.MaPDK == 0 select b;
+            }
             dataGridView1.DataSource = tk.ToList();
         }
 
         private void dataGridView1_CellClick(object sender, DataGridViewCellEventArgs e)
         {
             button1.Enabled = true;
-            button3.Enabled = true;
             textBox2.Clear();
             textBox3.Clear();
             textBox4.Clear();
@@ -81,7 +83,7 @@ namespace QuanLyKhachSan
             int madk = int.Parse(dataGridView1.CurrentRow.Cells[0].Value.ToString().TrimEnd());
             var phieu = db.MaPhieuDKs.SingleOrDefault(p => p.MaPDK == madk);
             txtDatTruoc.Text = phieu.TraTruoc.ToString();
-           var  ngay = DateTime.Now.Date - phieu.NgayDen.Value.Date ;
+            var ngay = DateTime.Now.Date - phieu.NgayDen.Value.Date;
             songay = ngay.Days;
             textBox4.Text = songay.ToString();
             var dichvu = phieu.DichVus;
@@ -107,8 +109,9 @@ namespace QuanLyKhachSan
             {
                 textBox3.Text = (-int.Parse(textBox1.Text)).ToString();
             }
-            else if (int.TryParse(textBox2.Text, out int a))
+            else if (textBox2.Text!="")
             {
+                int a = int.Parse(textBox2.Text);
                 textBox3.Text = (a - int.Parse(textBox1.Text)).ToString();
             }
             else
@@ -123,6 +126,7 @@ namespace QuanLyKhachSan
 
             int madk = int.Parse(dataGridView1.CurrentRow.Cells[0].Value.ToString().TrimEnd());
             var phieu = db.MaPhieuDKs.SingleOrDefault(p => p.MaPDK == madk);
+            var khach = db.KhachHangs.SingleOrDefault(a => a.MaKH == phieu.MaKH);
             phieu.NgayDi = DateTime.Now;
             var phieutt = new QuanLyKhachSan.Model.PhieuTT();
             phieutt.MaPDK = phieu.MaPDK;
@@ -130,7 +134,49 @@ namespace QuanLyKhachSan
             phieutt.SoNgay = DateTime.Now.Day - phieu.NgayDen.Value.Day;
             phieutt.TongTien = int.Parse(textBox1.Text);
             db.PhieuTTs.Add(phieutt);
+            var khachsan = db.ThongTinKS.ToList();
             db.SaveChanges();
+            //
+            Document doc = new Document(iTextSharp.text.PageSize.A6, 20, 20, 10, 10);
+
+            PdfWriter pdf = PdfWriter.GetInstance(doc, new System.IO.FileStream(phieu.MaPDK.ToString() + ".pdf", System.IO.FileMode.Create));
+            doc.Open();
+            //
+            BaseFont font = BaseFont.CreateFont(BaseFont.TIMES_ROMAN, BaseFont.CP1252, BaseFont.NOT_EMBEDDED);
+            iTextSharp.text.Font head = new iTextSharp.text.Font(font, 16, 1, BaseColor.GRAY);
+            Paragraph heading = new Paragraph();
+            heading.Alignment = Element.ALIGN_JUSTIFIED;
+            heading.Add(new Chunk("Hoa don", head));
+            doc.Add(heading);
+            //
+            BaseFont day = BaseFont.CreateFont(BaseFont.TIMES_ROMAN, BaseFont.CP1252, BaseFont.NOT_EMBEDDED);
+            iTextSharp.text.Font dayfont = new iTextSharp.text.Font(font, 8, 1, BaseColor.GRAY);
+            Paragraph date = new Paragraph();
+            date.Alignment = Element.ALIGN_RIGHT;
+            date.Add(new Chunk("Ngay thanh toan" + DateTime.Now.ToShortDateString(), dayfont));
+            doc.Add(date);
+            //
+            Paragraph pa = new Paragraph(new Chunk(new iTextSharp.text.pdf.draw.LineSeparator(0.0F, 100F, BaseColor.BLACK, Element.ALIGN_LEFT, Element.TITLE)));
+            doc.Add(pa);
+            Paragraph khachhang = new Paragraph("Khach hang: " + khach.TenKH);
+            doc.Add(khachhang);
+            string gt;
+            if (khach.GioiTinh == true) gt = "nam";
+            else gt = "nu";
+            Paragraph gioitinh = new Paragraph("Gioi tinh: " + gt);
+            doc.Add(gioitinh);
+            Paragraph lienlac = new Paragraph("SDT: " + khach.SDT);
+            doc.Add(lienlac);
+            Paragraph cmd = new Paragraph("So CMND(Ho chieu): " + khach.CMND);
+            doc.Add(cmd);
+            Paragraph email = new Paragraph("Email: " + khach.Email);
+            doc.Add(email);
+
+            Paragraph thanhtoan = new Paragraph("Tien phong: " + txtTienPhong.Text + "\n Tien dich vu:" + txtTienDV.Text + "\t So ngay:" + textBox4.Text + "\n Tong tien: " + txtSum.Text + "\n Tien dat truoc: " + txtDatTruoc.Text + "/n So tien thanh toan: "
+                + textBox2.Text + "/t So tien tra lai: " + textBox3.Text);
+            doc.Add(thanhtoan);
+            doc.Close();
+            button2_Click(sender, e);
         }
 
         private void button3_Click(object sender, EventArgs e)
@@ -162,6 +208,11 @@ namespace QuanLyKhachSan
             txtTimKiemCMND.Clear();
             txtTimKiemMaPDK.Clear();
             textBox1.Clear();
+        }
+
+        private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
         }
     }
 }

@@ -14,7 +14,7 @@ namespace QuanLyKhachSan
     public partial class TimKiem : Form
     {
         QuanLyKhachSanEntities3 db = new QuanLyKhachSanEntities3();
-        IEnumerable<PhieuTT> tt;
+
         IEnumerable<KhachHang> kh;
         IEnumerable<Model.DichVu> dv;
         IEnumerable<Model.Phong> phong;
@@ -32,8 +32,8 @@ namespace QuanLyKhachSan
             DateTime ngayden = dateTimePicker1.Value;
             DateTime ngaydi = dateTimePicker2.Value;
             kh = from b in db.KhachHangs select b;
-            
-            if(tenkh!="")
+
+            if (tenkh != "")
             {
                 kh = from n in kh where n.TenKH == tenkh select n;
             }
@@ -41,11 +41,11 @@ namespace QuanLyKhachSan
             {
                 kh = from n in kh where n.QuocTich == qt select n;
             }
-            if (cmnd!="")
+            if (cmnd != "")
             {
                 kh = from m in kh where m.CMND == cmnd select m;
             }
-            if(sdt!="")
+            if (sdt != "")
             {
                 kh = from k in kh where k.SDT == sdt select k;
             }
@@ -80,12 +80,14 @@ namespace QuanLyKhachSan
                 dataGridView1.DataSource = kha.ToList();
                 return;
             }
+            if (tenkh == "" && qt == "" && sdt == "" && cmnd == "" && !dateTimePicker1.Checked && !dateTimePicker2.Checked) kh = from b in db.KhachHangs where b.MaKH == 0 select b;
+
             dataGridView1.DataSource = kh.ToList();
         }
 
         private void btnThoat_Click(object sender, EventArgs e)
         {
-            kh = null;
+            kh = from b in db.KhachHangs where b.MaKH == 0 select b;
             dataGridView1.DataSource = kh.ToList();
             textBox1.Clear();
             textBox2.Clear();
@@ -96,16 +98,16 @@ namespace QuanLyKhachSan
             dateTimePicker1.Checked = false;
             dateTimePicker2.Checked = false;
         }
-
+        //button tim kiem dich vu
         private void btnTimKiemDV_Click(object sender, EventArgs e)
         {
-            if(textBox5.Text!="")
+            if (textBox5.Text != "")
             {
                 dv = from d in db.DichVus where d.TenDV == textBox5.Text select d;
             }
-            if(textBox6.Text!="")
-            {
-                int.TryParse(textBox6.Text, out int a);
+            if (textBox6.Text != "")
+            {               
+                int a = int.Parse(textBox6.Text);
                 dv = from d in db.DichVus where d.GiaDV == a select d;
             }
             dataGridView2.DataSource = dv.ToList();
@@ -127,23 +129,26 @@ namespace QuanLyKhachSan
                 comboBox2.Items.Add(kieuphong.ElementAt(j));
             }
         }
-
+        //tim kiem trong tra cuu phong
         private void button1_Click(object sender, EventArgs e)
         {
 
-            
-            
-           
-            phong = from a in db.Phongs select a;
-            if (textBox7.Text!="")
+            var phong = from a in db.Phongs select new { a.MaPhong, a.TenPhong, a.GiaPhong.Gia, a.MotaPhong };
+            //khi tim kiem theo ten phong
+            if (textBox7.Text != "")
             {
                 phong = from a in phong where a.TenPhong == textBox7.Text select a;
             }
-            if(int.TryParse(textBox10.Text, out int v))
+            //kiem tra gia
+            //if (int.TryParse(textBox10.Text, out int v))
+            if (textBox10.Text != "")
             {
-                phong = from m in phong where m.GiaPhong.Gia == v select m;
+                int gia = int.Parse(textBox10.Text);
+                phong = from m in phong where m.Gia == gia select m;
             }
-            if(comboBox1.Text!="")
+          
+            //kiem tra ten loai phong
+            if (comboBox1.Text != "")
             {
                 string malp = comboBox1.Text.TrimEnd();
                 phong = from m in phong
@@ -153,6 +158,7 @@ namespace QuanLyKhachSan
                         select m;
 
             }
+            //kiem tra ten kieu phong
             if (comboBox2.Text != "")
             {
                 string malp = comboBox2.Text.TrimEnd();
@@ -168,13 +174,30 @@ namespace QuanLyKhachSan
 
         private void button5_Click(object sender, EventArgs e)
         {
-            phong = null;
+            phong = from a in db.Phongs where a.MaPhong == "" select a;
             comboBox1.Refresh();
             comboBox2.Refresh();
             textBox7.Clear();
             textBox10.Clear();
-            dataGridView3.ClearSelection();
+            dataGridView3.DataSource = phong.ToList();
+        }
+
+        private void dataGridView1_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
+        {
+            using (Thongtinkhachhang u = new Thongtinkhachhang(int.Parse(dataGridView1.CurrentRow.Cells[0].Value.ToString())))
+            {
+                u.ShowDialog();
+            };
+            TimKiem_Load(sender, e);
+        }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+            textBox5.Clear();
+            textBox6.Clear();
+            dv = from b in db.DichVus where b.MaDV == 0 select b;
+            dataGridView2.DataSource = dv.ToList();
         }
     }
-    
+
 }
